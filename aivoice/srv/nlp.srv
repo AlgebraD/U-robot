@@ -1,0 +1,7 @@
+#nlp服务
+
+string src_text         #发送给nlp的文本
+
+---
+
+string result_text #nlp返回的文本

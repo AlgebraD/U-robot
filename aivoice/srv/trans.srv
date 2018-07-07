@@ -1,0 +1,9 @@
+#翻译服务
+
+string src_text         #要翻译的文本
+string src_language     #源语言
+string dest_language    #目标语言
+
+---
+
+string result_text #翻译后的文本

@@ -1,0 +1,43 @@
+<launch>
+
+<node
+name="asr_node"
+pkg="aivoice"
+type="asr"
+output="screen"
+launch-prefix="xterm -e"
+/>
+
+<node
+name="tts_node"
+pkg="aivoice"
+type="tts"
+output="screen"
+launch-prefix="xterm -e"
+/>
+
+<node
+name="speak_node"
+pkg="aivoice"
+type="speak"
+output="screen"
+launch-prefix="xterm -e"
+/>
+
+<node
+name="nlp_node"
+pkg="aivoice"
+type="nlp"
+output="screen"
+launch-prefix="xterm -e"
+/>
+
+<node
+name="translate_node"
+pkg="aivoice"
+type="translate"
+output="screen"
+launch-prefix="xterm -e"
+/>
+
+</launch>
