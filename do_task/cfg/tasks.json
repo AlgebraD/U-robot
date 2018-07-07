@@ -1,0 +1,83 @@
+[
+
+	{
+		"id"	:	1,
+		"description"	:	"拿饮料",
+		"type"		:	0,
+		"actions"	:	
+			[
+				{
+					"description"	: "接受任务",
+					"action_type" : 1,
+					"say":"好的，请稍等"
+				},
+				{
+					"description"	: "走到目标点",
+					"action_type" : 0,
+					"pose":"-5.61 -2.72 0 0 0 0.99 -0.06",
+					"timeout":120
+				},
+				{
+					"description"	: "请求拿啤酒",
+					"action_type" : 1,
+					"say":"你好，可以给我瓶啤酒吗",
+					"timeout":120,
+					"listen"	:	
+						[
+							{
+								"by_order":"false",
+								"match":"false",
+								"items":["好了|打好了|可以了|好啦|打好啦|可以啦"]
+							}
+						]
+				},
+				{
+					"description"	: "感谢",
+					"action_type" : 1,
+					"say":"谢谢"
+				},
+				{
+					"description"	: "返回",
+					"action_type" : 0,
+					"pose":" 0 0.01 0 0 0 0 0.99"
+				},
+				{
+					"description"	: "任务完成",
+					"action_type" : 1,
+					"say":"您的啤酒，不用谢我，请叫我雷锋"
+				}
+			]	
+	},
+	{
+		"id"	:	2,
+		"description"	:	"测试",
+		"type"		:	0,
+		"actions"	:	
+			[
+				{
+					"description"	: "请求打水",
+					"action_type" : 1,
+					"say":"你好，可以帮我打杯水吗",
+					"listen"	:	
+						[
+							{
+								"by_order":"false",
+								"match":"false",
+								"items":["好了|打好了|可以了|好啦|打好啦|可以啦"]
+							}
+						]
+				},
+				{
+					"description"	: "感谢",
+					"action_type" : 1,
+					"say":"谢谢"
+				},
+				{
+					"description"	: "任务完成",
+					"action_type" : 1,
+					"say":"您的水来了，不用谢我，请叫我雷锋"
+				}
+			]	
+	}
+	
+]

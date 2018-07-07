@@ -1,0 +1,5 @@
+<launch>
+   <node name="do_task_node" pkg="do_task" type="do_task_node.py" output="screen">
+      <rosparam file="$(find do_task)/cfg/params.yaml" command="load" />
+   </node>
+</launch>

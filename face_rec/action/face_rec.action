@@ -1,0 +1,10 @@
+uint32 timeout
+uint32 rec_mode
+
+---
+
+string[] person
+uint32[] confidence
+ 
+---
+

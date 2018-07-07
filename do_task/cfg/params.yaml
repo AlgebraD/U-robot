@@ -1,0 +1,8 @@
+
+port: /dev/ttyACM0
+asr_result_topic: asr_result_topic  #asr结果主题名
+tts_topic: tts_topic              #tts节点主题名
+trans_service: translate_service  #翻译节点提供的服务名
+nlp_service: nlp_service          #nlp节点提供的服务名
+face_rec_server: face_rec_server  #人脸识别节点提供的action服务端名
+

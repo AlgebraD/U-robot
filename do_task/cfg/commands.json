@@ -1,0 +1,260 @@
+[
+	{
+		"command_id"	:	1,
+		"description"	:	"唤醒",
+		"patterns"	:	
+			[
+				{
+					"by_order":"true",
+					"match":"true",
+					"items":["优优"]
+				}
+			]	
+	},
+
+	{
+		"command_id"	:	2,
+		"description"	:	"中译英",
+		"patterns"	:	
+			[
+				{
+					"by_order":"true",
+					"match":"false",
+					"items":["讲|说","中文|汉语","讲|说","英文|英语"]
+				}
+			]	
+	},
+
+	{
+		"command_id"	:	3,
+		"description"	:	"英译中",
+		"patterns"	:	
+			[
+				{
+					"by_order":"true",
+					"match":"false",
+					"items":["讲|说","英文|英语","讲|说","中文|汉语"]
+				}
+			]	
+	},
+
+	{
+		"command_id"	:	4,
+		"description"	:	"停止翻译",
+		"patterns"	:	
+			[
+				{
+					"by_order":"false",
+					"match":"false",
+					"items":["停止|结束|不|别","翻译"]
+				}
+			]	
+	},
+
+	{
+		"command_id"	:	5,
+		"description"	:	"讲普通话男声",
+		"patterns"	:	
+			[
+				{
+					"by_order":"false",
+					"match":"false",
+					"items":["讲|说","普通话","男"]
+				}
+			]	
+	},
+	
+	{
+		"command_id"	:	6,
+		"description"	:	"讲普通话女声",
+		"patterns"	:	
+			[
+				{
+					"by_order":"false",
+					"match":"false",
+					"items":["讲|说","普通话"]
+				},
+				{
+					"by_order":"false",
+					"match":"false",
+					"items":["讲|说","普通话","女"]
+				}
+			]	
+	},
+	
+	{
+		"command_id"	:	7,
+		"description"	:	"讲广东话",
+		"patterns"	:	
+			[
+				{
+					"by_order":"false",
+					"match":"false",
+					"items":["讲|说","广东话|粤语"]
+				}
+			]	
+	},
+	
+	{
+		"command_id"	:	8,
+		"description"	:	"讲四川话",
+		"patterns"	:	
+			[
+				{
+					"by_order":"false",
+					"match":"false",
+					"items":["讲|说","四川话"]
+				}
+			]	
+	},
+	
+	{
+		"command_id"	:	9,
+		"description"	:	"讲湖南话",
+		"patterns"	:	
+			[
+				{
+					"by_order":"false",
+					"match":"false",
+					"items":["讲|说","湖南话"]
+				}
+			]	
+	},
+	
+	{
+		"command_id"	:	10,
+		"description"	:	"讲台湾话",
+		"patterns"	:	
+			[
+				{
+					"by_order":"false",
+					"match":"false",
+					"items":["讲|说","台湾话"]
+				}
+			]	
+	},
+	
+	{
+		"command_id"	:	11,
+		"description"	:	"讲河南话",
+		"patterns"	:	
+			[
+				{
+					"by_order":"false",
+					"match":"false",
+					"items":["讲|说","河南话"]
+				}
+			]	
+	},
+	
+	{
+		"command_id"	:	12,
+		"description"	:	"讲东北话",
+		"patterns"	:	
+			[
+				{
+					"by_order":"false",
+					"match":"false",
+					"items":["讲|说","东北话"]
+				}
+			]	
+	},
+	
+	{
+		"command_id"	:	13,
+		"description"	:	"讲童声",
+		"patterns"	:	
+			[
+				{
+					"by_order":"false",
+					"match":"false",
+					"items":["讲|说","童声"]
+				},
+				{
+					"by_order":"false",
+					"match":"false",
+					"items":["模仿|模拟|用","小朋友|小孩子|童声","讲话|说话"]
+				}
+			]	
+	},
+
+	{
+		"command_id"	:	15,
+		"description"	:	"待机",
+		"patterns"	:	
+			[
+				{
+					"by_order":"false",
+					"match":"true",
+					"items":["待机|待命|静默"]
+				},
+				{
+					"by_order":"true",
+					"match":"false",
+					"items":["待机|待命|静默",",|.|，|。| "]
+				}
+			]	
+	},
+	
+	{
+		"command_id"	:	16,
+		"description"	:	"人脸识别",
+		"patterns"	:	
+			[
+				{
+					"by_order":"false",
+					"match":"false",
+					"items":["认识我吗|我是谁|我叫什么"]
+				}
+			]	
+	},
+	
+	{
+		"command_id"	:	17,
+		"description"	:	"停止移动",
+		"patterns"	:	
+			[
+				{
+					"by_order":"false",
+					"match":"true",
+					"items":["停止移动|停下|停止"]
+				},
+				{
+					"by_order":"false",
+					"match":"true",
+					"items":["停止移动，|停止移动。|停下，|停下。|停止，|停止。"]
+				}
+			]	
+	},
+	
+	{
+		"command_id"	:	18,
+		"description"	:	"请求打水",
+		"patterns"	:	
+			[
+				{
+					"by_order":"false",
+					"match":"false",
+					"items":["打杯水|打水|倒杯水"]
+				},
+				{
+					"by_order":"true",
+					"match":"false",
+					"items":["打杯|倒杯","水"]
+				}
+			]	
+	},
+	
+	{
+		"command_id"	:	19,
+		"description"	:	"拿啤酒",
+		"patterns"	:	
+			[
+				{
+					"by_order":"true",
+					"match":"false",
+					"items":["拿|倒","啤酒"]
+				}
+			]	
+	}
+]
