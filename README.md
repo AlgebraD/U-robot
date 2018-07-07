@@ -173,6 +173,7 @@ private:
 gmapping是一个比较完善的地图构建开源包，使用激光和里程计的数据来生成二维地图。
 
 订阅主题：
+
 tf (tf/tfMessage) 
 scan (sensor_msgs/LaserScan)
 
