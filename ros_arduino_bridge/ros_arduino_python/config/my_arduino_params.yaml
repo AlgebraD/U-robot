@@ -1,0 +1,79 @@
+# For a direct USB cable connection, the port name is typically
+# /dev/ttyACM# where is # is a number such as 0, 1, 2, etc
+# For a wireless connection like XBee, the port is typically
+# /dev/ttyUSB# where # is a number such as 0, 1, 2, etc.
+
+port: /dev/ttyACM0
+baud: 57600
+timeout: 0.1
+
+rate: 50
+sensorstate_rate: 10
+
+use_base_controller: TRUE
+base_controller_rate: 20
+
+# For a robot that uses base_footprint, change base_frame to base_footprint
+base_frame: base_link
+
+# === Robot drivetrain parameters
+wheel_diameter: 0.058
+wheel_track: 0.105
+
+encoder_resolution_A: 11.5 
+encoder_resolution_B: 11.5
+encoder_resolution_C: 10
+
+gear_reduction_A: 45
+gear_reduction_B: 45
+gear_reduction_C: 45
+
+motors_reversed: True
+linear_scale_correction: 1
+angular_scale_correction: 1
+
+debug_pid: TRUE
+# === PID parameters
+AWheel_Kp: 14
+AWheel_Kd: 15
+AWheel_Ki: 0
+AWheel_Ko: 5
+
+BWheel_Kp: 14
+BWheel_Kd: 15
+BWheel_Ki: 0
+BWheel_Ko: 5
+
+CWheel_Kp: 14
+CWheel_Kd: 15
+CWheel_Ki: 0
+CWheel_Ko: 5
+accel_limit: 1
+
+
+
+# === Sensor definitions.  Examples only - edit for your robot.
+#     Sensor type can be one of the follow (case sensitive!):
+#	  * Ping
+#	  * GP2D12
+#	  * Analog
+#	  * Digital
+#	  * PololuMotorCurrent
+#	  * PhidgetsVoltage
+#	  * PhidgetsCurrent (20 Amp, DC)
+
+
+
+sensors: {
+  #motor_current_left:   {pin: 0, type: PololuMotorCurrent, rate: 5},
+  #motor_current_right:  {pin: 1, type: PololuMotorCurrent, rate: 5},
+  #ir_front_center:      {pin: 2, type: GP2D12, rate: 10},
+  #sonar_front_center:   {pin: 5, type: Ping, rate: 10},
+
+  #电源电压值（缩小5倍）,mega板子A0=54
+  voltage: {pin: 54, type: Analog, rate: 1, direction: input},
+  #底层正前方超声波
+  ultrasound_bottom: {trig_pin: 25 , echo_pin: 24, type: Ping, rate: 5, direction: input,frame_id: ultrasound_bottom},
+  #中间层正前方超声波
+  ultrasound_middle: {trig_pin: 23 , echo_pin: 22, type: Ping, rate: 5, direction: input,frame_id: ultrasound_middle}
+}
