@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="youyou_robot" type="sonar2laser.py" name="sonar2laser" output="screen" launch-prefix="xterm -e">
+    <rosparam file="$(find youyou_robot)/param/sonar2laser.yaml" command="load" />
+  </node>
+</launch>
+

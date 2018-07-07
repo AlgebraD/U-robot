@@ -1,0 +1,39 @@
+<launch>
+  <master auto="start" />
+    
+  <arg name="odom_frame_id"   default="odom"/>
+  <!--<arg name="odom_frame_id"   default="odom_combined"/>-->
+  <arg name="base_frame_id"   default="base_link"/>
+  <arg name="global_frame_id" default="map"/>
+  <arg name="odom_topic" default="odom" />
+  <!--<arg name="odom_topic" default="/odom_ekf" />-->
+  <arg name="laser_topic" default="scan" />
+
+  <include file="$(find aivoice)/launch/aivoice.launch" />
+  <include file="$(find youyou_robot)/launch/robot_base.launch" />
+
+  <!--<include file="$(find do_task)/launch/do_task.launch" />-->
+  <!-- <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" /> -->
+
+  <!-- Run the map server -->
+   <node name="map_server" pkg="map_server" type="map_server" args="/home/youyoujushi/map/map.yaml"
+        output="screen"
+        launch-prefix="xterm -e"
+    /> 
+
+  <!--- Run AMCL -->
+  <include file="$(find youyou_robot)/launch/amcl_omni.launch" />
+
+
+  <!-- Move base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" launch-prefix="xterm -e" >
+    <rosparam file="$(find youyou_robot)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find youyou_robot)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find youyou_robot)/param/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find youyou_robot)/param/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find youyou_robot)/param/dwa_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find youyou_robot)/param/global_planner_params.yaml" command="load" />  
+    <rosparam file="$(find youyou_robot)/param/move_base_params.yaml" command="load" />  
+  </node>
+
+</launch>

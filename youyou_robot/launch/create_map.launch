@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find youyou_robot)/launch/robot_base.launch" />
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" />
+</launch>

@@ -1,0 +1,3 @@
+sonar_topics: ["/arduino/sensor/ultrasound_bottom","/arduino/sensor/ultrasound_middle"]
+output_topic: "/sonar2laser"
+frame_id: "sonar2laser"

@@ -1,0 +1,36 @@
+<launch>
+   <!-- rplidar雷达节点 -->  
+   <include file="$(find rplidar_ros)/launch/rplidar.launch" />
+   <!-- 9轴陀螺仪节点 -->  
+   <include file="$(find razor_imu_9dof)/launch/razor-pub.launch" />
+   <!-- 传感器数据融合节点 -->  
+   <include file="$(find robot_pose_ekf)/robot_pose_ekf.launch" />
+   <!-- 更新odom为融合后的数据 -->  
+   <include file="$(find youyou_robot)/launch/odom_ekf.launch" />
+   <!-- 超声波数据转换成雷达数据 -->  
+   <include file="$(find youyou_robot)/launch/sonar2laser.launch" />
+
+   <!-- 座盘电机控制节点 -->  
+   <node name="arduino" pkg="ros_arduino_python" type="arduino_node.py" output="screen">
+      <rosparam file="$(find ros_arduino_python)/config/my_arduino_params.yaml" command="load" />
+   </node>
+
+   <!-- 发布底盘和雷达的静态tf转换 -->  
+   <node pkg="tf" type="static_transform_publisher" name="laser_tf" 
+        args="-0.05 0 0.4 -1.57 0 0 base_link laser 100" />
+
+   <!-- 发布电机里程计和多传感数据整合里程计的静态tf转换 -->  
+   <node pkg="tf" type="static_transform_publisher" name="odom_combined_broadcaster" 
+        args="0 0 0 0 0 0 /odom /odom_combined 100" />
+
+   <!-- 发布底盘和底层超声波传感器的静态tf转换 -->  
+   <node pkg="tf" type="static_transform_publisher" name="ultrasound_bottom_tf" 
+        args="0.1 -0.01 0 0 0 0 base_link ultrasound_bottom 100" />
+
+   <!-- 发布底盘和中层超声波传感器的静态tf转换 -->  
+   <node pkg="tf" type="static_transform_publisher" name="ultrasound_middle_tf" 
+        args="0.1 0 0 0 0 0 base_link ultrasound_middle 100" />
+
+   <node pkg="tf" type="static_transform_publisher" name="sonar2laser_tf" 
+        args="0 0 0 0 0 0 ultrasound_bottom sonar2laser 100" />
+</launch>
