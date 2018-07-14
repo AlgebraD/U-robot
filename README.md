@@ -9,9 +9,13 @@ UUROBOT是一个集slam、听、说、看等功能于一体的室内三轮全向
 ### 开发环境
 
 Ububtu 16.04 LTS
+
 Python2.7/C++11
+
 PyAIML ：Python中的AIML解释器
+
 POS kinetic
+
 
 ### 功能介绍
 
